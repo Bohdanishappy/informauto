@@ -1,0 +1,15 @@
+{
+    "inform":"INFORM",
+    "auto":"AUTO",
+    "logout":"Logout",
+    "add_vehicle":"Add Vehicle",
+    "token":"Token",
+    "name":"Name",
+    "enter_vahicle_name":"Enter Vahicle Name",
+    "add":"Add",
+    "cancel":"Cancel",
+    "Delete Item":"Delete Item",
+    "Are you sure you want to delete this Item?":"Are you sure you want to delete this Item?",
+    "Delete":"Delete",
+    "Cancel":"Cancel"
+}

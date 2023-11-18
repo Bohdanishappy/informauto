@@ -1,0 +1,15 @@
+{
+    "inform":"INFORMOVAT",
+    "auto":"AUTO",
+    "logout":"Odhlásit se",
+    "add_vehicle":"Přidat vozidlo",
+    "token":"Žeton",
+    "name":"název",
+    "enter_vahicle_name":"Zadejte název vozidla",
+    "add":"Přidat",
+    "cancel":"zrušení",
+    "Delete Item":"Smazat položku",
+    "Are you sure you want to delete this Item?":"Opravdu chcete tuto položku smazat?",
+    "Delete":"Vymazat",
+    "Cancel":"zrušení"
+}

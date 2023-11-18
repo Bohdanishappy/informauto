@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.section_border {
+  @apply border-2 border-mainBlue rounded-xl p-5;
+}
+.heading_underline {
+  @apply border-b-2 border-mainBlue py-2 my-2 inline-block text-mainBlue font-semibold;
+}
