@@ -25,7 +25,10 @@ const VehiclesComponent = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await fetch('/api/cars', { cache: 'no-store' });
+        const timestamp = new Date().getTime();
+        const response = await fetch(`/api/cars?timestamp=${timestamp}`, {
+          cache: 'no-store',
+        });
         const data = await response.json();
         setVahicles(data.cars);
         setLoading(false);
