@@ -16,7 +16,9 @@ const HomeComponent = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await fetch(`/api/cars/${ticket}`);
+      const response = await fetch(`/api/cars/${ticket}`, {
+        cache: 'no-store',
+      });
       console.log('response', response);
       if (response.ok) {
         router.push(`/vehicles/${ticket}`);

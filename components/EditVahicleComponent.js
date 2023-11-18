@@ -914,7 +914,7 @@ const EditVahicleComponent = ({ id }) => {
     const fetchData = async () => {
       setFetchLoading(true);
       try {
-        const response = await fetch(`/api/cars/${id}`);
+        const response = await fetch(`/api/cars/${id}`, { cache: 'no-store' });
         const data = await response.json();
         console.log('data.item', data.item);
         setVehicle(data.item);
