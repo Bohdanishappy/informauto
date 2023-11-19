@@ -457,26 +457,27 @@ const PhotoVideoReport = ({ vehicle, setVehicle }) => {
           {vehicle.photoVideoReport.morePhotos.length > 0 && (
             <div className="grid sm:grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-4 mt-3 mb-5">
               {vehicle.photoVideoReport.morePhotos.map((photo, i) => (
-                <FullScreen handle={handle}>
-                  <div
-                    key={`photo_${i}`}
-                    onClick={!handle.active ? handle.enter : handle.exit}
-                    className="relative"
-                  >
-                    <Image
-                      width={320}
-                      height={100}
-                      src={photo}
-                      className="w-full h-auto rounded-lg"
+                <div className="relative">
+                  {currentUser && (
+                    <TrashIcon
+                      className="text-red-600 w-[20px] h-[20px] absolute top-0 right-0 cursor-pointer"
+                      onClick={() => deleteMorePhotosFromStorage(photo, i)}
                     />
-                    {currentUser && (
-                      <TrashIcon
-                        className="text-red-600 w-[20px] h-[20px] absolute top-0 right-0 cursor-pointer"
-                        onClick={() => deleteMorePhotosFromStorage(photo, i)}
+                  )}
+                  <FullScreen handle={handle}>
+                    <div
+                      key={`photo_${i}`}
+                      onClick={!handle.active ? handle.enter : handle.exit}
+                    >
+                      <Image
+                        width={320}
+                        height={100}
+                        src={photo}
+                        className="w-full h-auto rounded-lg"
                       />
-                    )}
-                  </div>
-                </FullScreen>
+                    </div>
+                  </FullScreen>
+                </div>
               ))}
             </div>
           )}
