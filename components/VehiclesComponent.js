@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import WarningModal from '@/components/WarningModal';
 import LanguageChanger from './LanguageChanger';
 import { useTranslation } from 'react-i18next';
+import { ClipboardDocumentIcon } from '@heroicons/react/20/solid';
 
 const VehiclesComponent = () => {
   const router = useRouter();
@@ -114,7 +115,7 @@ const VehiclesComponent = () => {
             </button>
             <button
               type="button"
-              className="block w-full sm:w-auto mb-2 sm:mb-0 rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="block w-full sm:w-auto mb-2 sm:mb-0 rounded-md bg-mainBlue px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-mainBlue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mainBlue"
               onClick={() => setOpen(true)}
             >
               {t('add_vehicle')}
@@ -142,6 +143,12 @@ const VehiclesComponent = () => {
                     </th>
                     <th
                       scope="col"
+                      className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
+                    >
+                      {t('Copy Link')}
+                    </th>
+                    <th
+                      scope="col"
                       className="relative py-3.5 pl-3 pr-4 sm:pr-0"
                     >
                       <span className="sr-only">Edit</span>
@@ -154,23 +161,24 @@ const VehiclesComponent = () => {
                       <td className="whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0">
                         <div className="flex items-center">
                           <div>
-                            <div
-                              className="cursor-pointer font-medium text-gray-900"
-                              onClick={() => {
-                                copy(car.ticket);
-                                toast.success('Coppied!', {
-                                  position: 'bottom-center',
-                                  autoClose: 5000,
-                                  hideProgressBar: false,
-                                  closeOnClick: true,
-                                  pauseOnHover: true,
-                                  draggable: true,
-                                  progress: undefined,
-                                  theme: 'light',
-                                });
-                              }}
-                            >
+                            <div className="flex items-center font-medium text-gray-900">
                               {car.ticket}
+                              <ClipboardDocumentIcon
+                                className="w-[20px] h-[20px] cursor-pointer inline ml-2 text-mainBlue"
+                                onClick={() => {
+                                  copy(car.ticket);
+                                  toast.success('Coppied!', {
+                                    position: 'bottom-center',
+                                    autoClose: 5000,
+                                    hideProgressBar: false,
+                                    closeOnClick: true,
+                                    pauseOnHover: true,
+                                    draggable: true,
+                                    progress: undefined,
+                                    theme: 'light',
+                                  });
+                                }}
+                              />
                             </div>
                           </div>
                         </div>
@@ -184,9 +192,35 @@ const VehiclesComponent = () => {
                           </div>
                         </div>
                       </td>
+                      <td className="whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0">
+                        <div className="flex items-center">
+                          <div>
+                            <div className="font-medium text-gray-900">
+                              <ClipboardDocumentIcon
+                                className="inline cursor-pointer text-mainBlue w-[30px] h-[30px]"
+                                onClick={() => {
+                                  copy(
+                                    `${window.location.origin}/vehicles/${car.ticket}`
+                                  );
+                                  toast.success('Coppied!', {
+                                    position: 'bottom-center',
+                                    autoClose: 5000,
+                                    hideProgressBar: false,
+                                    closeOnClick: true,
+                                    pauseOnHover: true,
+                                    draggable: true,
+                                    progress: undefined,
+                                    theme: 'light',
+                                  });
+                                }}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </td>
                       <td className="relative whitespace-nowrap py-5 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
                         <PencilSquareIcon
-                          className="inline cursor-pointer text-indigo-600 hover:text-indigo-900 w-[30px] h-[30px]"
+                          className="inline cursor-pointer text-mainBlue w-[30px] h-[30px]"
                           onClick={() => router.push(`/vehicles/${car.ticket}`)}
                         />
                         <TrashIcon

@@ -7,8 +7,9 @@ import {
 } from '@heroicons/react/24/solid';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import TextArea from './TextArea';
 
-const Accordion = ({ items, handleOption }) => {
+const Accordion = ({ items, handleOption, handleNotes }) => {
   const [t] = useTranslation();
   const { currentUser } = useAuth();
   const [openIndex, setOpenIndex] = useState(null);
@@ -41,15 +42,23 @@ const Accordion = ({ items, handleOption }) => {
             >
               <h1 className="text-2xl">
                 <span className="heading_underline ">{t(item.name)}</span>{' '}
-                <span className="text-xl text-green-500">
+                {/* <span className="text-xl text-green-500">
                   <CheckCircleIcon className="inline w-[30px] h-[30px]" />{' '}
                   <span className="text-black">({totalOk})</span>
-                </span>
-                <span className="ml-5 text-xl text-red-500">
+                </span> */}
+                <span
+                  className={`ml-5 text-xl text-red-500 ${
+                    totalNotOk === 0 && 'hidden'
+                  }`}
+                >
                   <XCircleIcon className="inline w-[30px] h-[30px]" />{' '}
                   <span className="text-black">({totalNotOk})</span>
                 </span>
-                <span className="ml-5 text-xl text-yellow-500">
+                <span
+                  className={`ml-5 text-xl text-yellow-500 ${
+                    totalToJudge === 0 && 'hidden'
+                  }`}
+                >
                   <ExclamationTriangleIcon className="inline w-[30px] h-[30px]" />{' '}
                   <span className="text-black">({totalToJudge})</span>
                 </span>
@@ -99,7 +108,7 @@ const Accordion = ({ items, handleOption }) => {
                     <div>
                       <CheckCircleIcon
                         className={`inline ${
-                          currentUser && 'cursor-pointer'
+                          currentUser ? 'cursor-pointer' : !op.ok && 'hidden'
                         } w-[30px] h-[30px] ${
                           op.ok ? 'text-green-500' : 'text-slate-300'
                         }`}
@@ -109,7 +118,7 @@ const Accordion = ({ items, handleOption }) => {
                       />
                       <XCircleIcon
                         className={`ml-2 inline ${
-                          currentUser && 'cursor-pointer'
+                          currentUser ? 'cursor-pointer' : !op.notOk && 'hidden'
                         } w-[30px] h-[30px] ${
                           op.notOk ? 'text-red-500' : 'text-slate-300'
                         }`}
@@ -119,7 +128,9 @@ const Accordion = ({ items, handleOption }) => {
                       />
                       <ExclamationTriangleIcon
                         className={`ml-2 inline ${
-                          currentUser && 'cursor-pointer'
+                          currentUser
+                            ? 'cursor-pointer'
+                            : !op.toJudge && 'hidden'
                         } w-[30px] h-[30px] ${
                           op.toJudge ? 'text-yellow-500' : 'text-slate-300'
                         }`}
@@ -131,6 +142,16 @@ const Accordion = ({ items, handleOption }) => {
                   </div>
                 ))}
               </div>
+            )}
+            {openIndex === index && (
+              <TextArea
+                label={t('notes')}
+                name="interier"
+                value={item.notes}
+                placeholder={t('enter_notes')}
+                onChange={(e) => handleNotes(index, e.target.value)}
+                readOnly={!currentUser}
+              />
             )}
           </div>
         );

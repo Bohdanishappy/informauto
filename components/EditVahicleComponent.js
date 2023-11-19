@@ -92,6 +92,7 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Transmission',
@@ -115,6 +116,7 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Clutch',
@@ -144,6 +146,7 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Driving',
@@ -215,6 +218,7 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Other',
@@ -250,6 +254,7 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
       ],
     },
@@ -343,6 +348,7 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Seats',
@@ -378,6 +384,7 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Air Bags And Seat Belts',
@@ -395,6 +402,7 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Audio And Alarm',
@@ -424,6 +432,7 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Heating AC',
@@ -447,6 +456,7 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Roof Window Opeaning',
@@ -464,6 +474,7 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Diagnosis',
@@ -481,6 +492,7 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
       ],
     },
@@ -634,6 +646,7 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Body Parts',
@@ -657,6 +670,7 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Paint',
@@ -674,6 +688,7 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Head Lights',
@@ -703,6 +718,7 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Windows',
@@ -720,6 +736,7 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Tires Wheels Breaks',
@@ -815,6 +832,7 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Windows And Door Locks',
@@ -832,6 +850,7 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'chassis',
@@ -903,6 +922,7 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
       ],
     },

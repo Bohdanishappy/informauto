@@ -339,9 +339,15 @@ const UploadCarPhoto = ({ vehicle, setVehicle }) => {
               </span>
             </div>
           </div>
-          <div className="mt-5 py-3 px-5 rounded-md bg-slate-100 border">
+          <div
+            className={`mt-5 py-3 px-5 rounded-md bg-slate-100 border ${
+              !currentUser && 'flex items-center'
+            }`}
+          >
             <div
-              className="flex items-center cursor-pointer"
+              className={`flex items-center cursor-pointer ${
+                !currentUser && !vehicle.recomendedToBuy && 'hidden'
+              }`}
               onClick={() => (currentUser ? changeRecomendation() : null)}
             >
               <CheckCircleIcon
@@ -349,10 +355,14 @@ const UploadCarPhoto = ({ vehicle, setVehicle }) => {
                   vehicle.recomendedToBuy ? 'text-green-500' : 'text-slate-300'
                 }`}
               />
-              <span className="ml-2">{t('recomended_to_buy')}</span>
+              <span className={`ml-2 ${!currentUser && 'text-4xl'}`}>
+                {t('recomended_to_buy')}
+              </span>
             </div>
             <div
-              className="flex items-center mt-1 cursor-pointer"
+              className={`flex items-center mt-1 cursor-pointer ${
+                !currentUser && !vehicle.notRecomendedToBuy && 'hidden'
+              }`}
               onClick={() => (currentUser ? changeNotRecomendation() : null)}
             >
               <XCircleIcon
@@ -360,10 +370,15 @@ const UploadCarPhoto = ({ vehicle, setVehicle }) => {
                   vehicle.notRecomendedToBuy ? 'text-red-500' : 'text-slate-300'
                 }`}
               />
-              <span className="ml-2"> {t('not_recomended_to_buy')}</span>
+              <span className={`ml-2 ${!currentUser && 'text-4xl'}`}>
+                {' '}
+                {t('not_recomended_to_buy')}
+              </span>
             </div>
             <div
-              className="flex items-center mt-1 cursor-pointer"
+              className={`flex items-center mt-1 cursor-pointer ${
+                !currentUser && !vehicle.toJudge && 'hidden'
+              }`}
               onClick={() => (currentUser ? changeToJudge() : null)}
             >
               <ExclamationTriangleIcon
@@ -371,7 +386,9 @@ const UploadCarPhoto = ({ vehicle, setVehicle }) => {
                 ${vehicle.toJudge ? 'text-yellow-500' : 'text-slate-300'}
                 `}
               />
-              <span className="ml-2">{t('to_judge')}</span>
+              <span className={`ml-2 ${!currentUser && 'text-4xl'}`}>
+                {t('to_judge')}
+              </span>
             </div>
           </div>
         </div>

@@ -46,12 +46,31 @@ const RoadTest = ({ vehicle, setVehicle }) => {
       };
     });
   };
+  const handleNotes = (i, value) => {
+    let newArray = [...vehicle.roadTest.options];
+    newArray[i] = {
+      ...newArray[i],
+      notes: value,
+    };
+    setVehicle((prev) => {
+      return {
+        ...prev,
+        roadTest: {
+          options: newArray,
+        },
+      };
+    });
+  };
   return (
     <div className="mb-5">
       <h1 className="text-3xl mb-5">
         <span className="heading_underline">{t('road_test')}</span>
       </h1>
-      <Accordion handleOption={handleOption} items={vehicle.roadTest.options} />
+      <Accordion
+        handleNotes={handleNotes}
+        handleOption={handleOption}
+        items={vehicle.roadTest.options}
+      />
     </div>
   );
 };

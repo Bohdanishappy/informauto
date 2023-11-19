@@ -12,16 +12,19 @@ import { TrashIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import { useAuth } from '@/contexts/AuthContext';
 import { useTranslation } from 'react-i18next';
+import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 const VideoPlayer = dynamic(() => import('./VideoPlayer'), {
   ssr: false,
 });
 
 const PhotoVideoReport = ({ vehicle, setVehicle }) => {
+  const handle = useFullScreenHandle();
   const { currentUser } = useAuth();
   const [t] = useTranslation();
   const [progress, setProgress] = useState(0);
   const [progress1, setProgress1] = useState(0);
   const [progress2, setProgress2] = useState(0);
+  const [full, setFull] = useState(false);
   const handleField = (e) => {
     setVehicle((prev) => {
       return {
@@ -79,7 +82,7 @@ const PhotoVideoReport = ({ vehicle, setVehicle }) => {
             },
           };
         });
-        const response = await fetch(`/api/cars/${vehicle._id}`, {
+        const response = await fetch(`/api/cars/${vehicle.ticket}`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
@@ -143,7 +146,7 @@ const PhotoVideoReport = ({ vehicle, setVehicle }) => {
               },
             };
           });
-          const response = await fetch(`/api/cars/${vehicle._id}`, {
+          const response = await fetch(`/api/cars/${vehicle.ti}`, {
             method: 'PATCH',
             headers: {
               'Content-Type': 'application/json',
@@ -202,7 +205,7 @@ const PhotoVideoReport = ({ vehicle, setVehicle }) => {
               },
             };
           });
-          const response = await fetch(`/api/cars/${vehicle._id}`, {
+          const response = await fetch(`/api/cars/${vehicle.ticket}`, {
             method: 'PATCH',
             headers: {
               'Content-Type': 'application/json',
@@ -267,7 +270,7 @@ const PhotoVideoReport = ({ vehicle, setVehicle }) => {
               },
             };
           });
-          const response = await fetch(`/api/cars/${vehicle._id}`, {
+          const response = await fetch(`/api/cars/${vehicle.ticket}`, {
             method: 'PATCH',
             headers: {
               'Content-Type': 'application/json',
@@ -454,20 +457,26 @@ const PhotoVideoReport = ({ vehicle, setVehicle }) => {
           {vehicle.photoVideoReport.morePhotos.length > 0 && (
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-3 mb-5">
               {vehicle.photoVideoReport.morePhotos.map((photo, i) => (
-                <div key={`photo_${i}`} className="relative">
-                  <Image
-                    width={320}
-                    height={100}
-                    src={photo}
-                    className="w-full h-auto rounded-lg"
-                  />
-                  {currentUser && (
-                    <TrashIcon
-                      className="text-red-600 w-[30px] h-[30px] absolute top-2 right-2 cursor-pointer"
-                      onClick={() => deleteMorePhotosFromStorage(photo, i)}
+                <FullScreen handle={handle}>
+                  <div
+                    key={`photo_${i}`}
+                    onClick={!handle.active ? handle.enter : handle.exit}
+                    className="relative"
+                  >
+                    <Image
+                      width={320}
+                      height={100}
+                      src={photo}
+                      className="w-full h-auto rounded-lg"
                     />
-                  )}
-                </div>
+                    {currentUser && (
+                      <TrashIcon
+                        className="text-red-600 w-[30px] h-[30px] absolute top-2 right-2 cursor-pointer"
+                        onClick={() => deleteMorePhotosFromStorage(photo, i)}
+                      />
+                    )}
+                  </div>
+                </FullScreen>
               ))}
             </div>
           )}

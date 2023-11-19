@@ -82,6 +82,7 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Transmission',
@@ -105,6 +106,7 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Clutch',
@@ -134,6 +136,7 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Driving',
@@ -205,6 +208,7 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Other',
@@ -240,6 +244,7 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
       ],
     },
@@ -333,6 +338,7 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Seats',
@@ -368,6 +374,7 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Air Bags And Seat Belts',
@@ -385,6 +392,7 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Audio And Alarm',
@@ -414,6 +422,7 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Heating AC',
@@ -437,6 +446,7 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Roof Window Opeaning',
@@ -454,6 +464,7 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Diagnosis',
@@ -471,6 +482,7 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
       ],
     },
@@ -624,6 +636,7 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Body Parts',
@@ -647,6 +660,7 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Paint',
@@ -664,6 +678,7 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Head Lights',
@@ -693,6 +708,7 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Windows',
@@ -710,6 +726,7 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Tires Wheels Breaks',
@@ -805,6 +822,7 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'Windows And Door Locks',
@@ -822,6 +840,7 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
         {
           name: 'chassis',
@@ -893,6 +912,7 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
           ],
+          notes: '',
         },
       ],
     },
