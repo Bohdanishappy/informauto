@@ -455,7 +455,7 @@ const PhotoVideoReport = ({ vehicle, setVehicle }) => {
         <div className="mb-5">
           <h2 className="text-2xl">{t('more_photos')}</h2>
           {vehicle.photoVideoReport.morePhotos.length > 0 && (
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-3 mb-5">
+            <div className="grid sm:grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-4 mt-3 mb-5">
               {vehicle.photoVideoReport.morePhotos.map((photo, i) => (
                 <FullScreen handle={handle}>
                   <div
@@ -471,7 +471,7 @@ const PhotoVideoReport = ({ vehicle, setVehicle }) => {
                     />
                     {currentUser && (
                       <TrashIcon
-                        className="text-red-600 w-[30px] h-[30px] absolute top-2 right-2 cursor-pointer"
+                        className="text-red-600 w-[20px] h-[20px] absolute top-0 right-0 cursor-pointer"
                         onClick={() => deleteMorePhotosFromStorage(photo, i)}
                       />
                     )}
