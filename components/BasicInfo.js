@@ -28,7 +28,7 @@ const BasicInfo = ({ vehicle, setVehicle }) => {
             label={t('model')}
             value={vehicle.basicInfo.model}
             placeholder={t('model')}
-            type="number"
+            type="text"
             name="model"
             onChange={handleField}
             readOnly={!currentUser}

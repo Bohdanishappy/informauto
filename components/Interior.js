@@ -46,12 +46,31 @@ const Interior = ({ vehicle, setVehicle }) => {
       };
     });
   };
+  const handleNotes = (i, value) => {
+    let newArray = [...vehicle.interior.options];
+    newArray[i] = {
+      ...newArray[i],
+      notes: value,
+    };
+    setVehicle((prev) => {
+      return {
+        ...prev,
+        interior: {
+          options: newArray,
+        },
+      };
+    });
+  };
   return (
     <div className="mb-5">
       <h1 className="text-3xl mb-5">
         <span className="heading_underline">{t('INTERIER')}</span>
       </h1>
-      <Accordion handleOption={handleOption} items={vehicle.interior.options} />
+      <Accordion
+        handleOption={handleOption}
+        handleNotes={handleNotes}
+        items={vehicle.interior.options}
+      />
     </div>
   );
 };
