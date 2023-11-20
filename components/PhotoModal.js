@@ -1,10 +1,34 @@
-import { Fragment, useRef, useState } from 'react';
+import { Fragment, useRef } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { useTranslation } from 'react-i18next';
+import {
+  ArrowRightIcon,
+  ArrowLeftIcon,
+  XMarkIcon,
+} from '@heroicons/react/24/solid';
 
-const PhotoModal = ({ open, setOpen, selectedPhoto }) => {
-  const [t] = useTranslation();
+const PhotoModal = ({
+  open,
+  setOpen,
+  selectedPhoto,
+  setSelectedPhoto,
+  photos,
+  setSelectedPhotoIndex,
+  selectedPhotoIndex,
+}) => {
   const cancelButtonRef = useRef(null);
+
+  const handleNextPhoto = () => {
+    if (photos.length - 1 !== selectedPhotoIndex) {
+      setSelectedPhotoIndex(selectedPhotoIndex + 1);
+      setSelectedPhoto(photos[selectedPhotoIndex + 1]);
+    }
+  };
+  const handleBackPhoto = () => {
+    if (selectedPhotoIndex !== 0) {
+      setSelectedPhotoIndex(selectedPhotoIndex - 1);
+      setSelectedPhoto(photos[selectedPhotoIndex - 1]);
+    }
+  };
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -37,10 +61,33 @@ const PhotoModal = ({ open, setOpen, selectedPhoto }) => {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-black px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:p-6">
-                <div className="w-full">
+              <Dialog.Panel className="relative transform overflow-hidden bg-black px-4 pb-4 pt-5 text-left shadow-xl transition-all h-screen w-full  sm:px-6">
+                <div className="absolute top-0 left-0 pt-4 pr-4 flex justify-end pb-4">
+                  <span className="text-white text-2xl ml-5">
+                    {selectedPhotoIndex + 1}/{photos.length}
+                  </span>
+                </div>
+                <div className="absolute top-0 left-0 right-0 pt-4 pr-4 flex justify-end pb-4">
+                  <XMarkIcon
+                    onClick={() => setOpen(false)}
+                    className="w-[40px] z-[100] cursor-pointer h-[40px] text-white"
+                  />
+                </div>
+                <div className="absolute top-0 left-0 bottom-0 flex items-center pb-4">
+                  <ArrowLeftIcon
+                    onClick={() => handleBackPhoto()}
+                    className="w-[40px] cursor-pointer h-[40px] text-white"
+                  />
+                </div>
+                <div className="absolute top-0 right-0 bottom-0 flex items-center pb-4">
+                  <ArrowRightIcon
+                    onClick={() => handleNextPhoto()}
+                    className="w-[40px] cursor-pointer h-[40px] text-white"
+                  />
+                </div>
+                <div className="h-full flex justify-center">
                   <img
-                    className="w-full"
+                    className="h-full w-auto"
                     src={selectedPhoto}
                     alt="selectedPhoto"
                   />

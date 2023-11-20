@@ -82,7 +82,7 @@ const BasicInfo = ({ vehicle, setVehicle }) => {
             label={t('price')}
             value={vehicle.basicInfo.price}
             placeholder={t('price')}
-            type="number"
+            type="text"
             name="price"
             onChange={handleField}
             readOnly={!currentUser}

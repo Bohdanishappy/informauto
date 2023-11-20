@@ -28,6 +28,7 @@ const PhotoVideoReport = ({ vehicle, setVehicle }) => {
   const [progress2, setProgress2] = useState(0);
   const [openPhoto, setOpenPhoto] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState('');
+  const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(0);
   const handleField = (e) => {
     setVehicle((prev) => {
       return {
@@ -458,7 +459,7 @@ const PhotoVideoReport = ({ vehicle, setVehicle }) => {
         <div className="mb-5">
           <h2 className="text-2xl">{t('more_photos')}</h2>
           {vehicle.photoVideoReport.morePhotos.length > 0 && (
-            <div className="grid sm:grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-4 mt-3 mb-5">
+            <div className="grid grid-cols-4 sm:grid-cols-8 md:grid-cols-8 lg:grid-cols-8 gap-4 mt-3 mb-5">
               {vehicle.photoVideoReport.morePhotos.map((photo, i) => (
                 <>
                   <div className="relative">
@@ -479,6 +480,7 @@ const PhotoVideoReport = ({ vehicle, setVehicle }) => {
                         src={photo}
                         onClick={() => {
                           setSelectedPhoto(photo);
+                          setSelectedPhotoIndex(i);
                           setOpenPhoto(true);
                         }}
                         className="w-full h-auto rounded-lg"
@@ -501,6 +503,9 @@ const PhotoVideoReport = ({ vehicle, setVehicle }) => {
             setSelectedPhoto={setSelectedPhoto}
             open={openPhoto}
             setOpen={setOpenPhoto}
+            photos={vehicle.photoVideoReport.morePhotos}
+            setSelectedPhotoIndex={setSelectedPhotoIndex}
+            selectedPhotoIndex={selectedPhotoIndex}
           />
           <div className="my-3">
             {progress2 > 0 ? (
