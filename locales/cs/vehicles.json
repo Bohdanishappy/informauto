@@ -1,15 +1,15 @@
 {
-    "inform":"INFORMOVAT",
+    "inform":"INFORM",
     "auto":"AUTO",
     "logout":"Odhlásit se",
     "add_vehicle":"Přidat vozidlo",
-    "token":"Žeton",
-    "name":"název",
+    "token":"ID protokolu",
+    "name":"Auto",
     "enter_vahicle_name":"Zadejte název vozidla",
     "add":"Přidat",
-    "cancel":"zrušení",
-    "Delete Item":"Smazat položku",
-    "Are you sure you want to delete this Item?":"Opravdu chcete tuto položku smazat?",
-    "Delete":"Vymazat",
-    "Cancel":"zrušení"
+    "cancel":"Zrušit",
+    "Delete Item":"Odstranit",
+    "Are you sure you want to delete this Item?":"Opravdu chcete tento protokol odstranit?",
+    "Delete":"Odstranit",
+    "Cancel":"Zrušit"
 }

@@ -19,8 +19,8 @@ const BasicInfo = ({ vehicle, setVehicle }) => {
   };
   return (
     <div className="mb-5">
-      <h1 className="text-3xl mb-5">
-        <span className="heading_underline">{t('basic_info')}</span>
+      <h1 className="text-3xl font-bold text-mainBlue mb-5">
+        <span>{t('basic_info')}</span>
       </h1>
       <div className="section_border">
         <div className="grid sm:grid-cols-2 gap-4">

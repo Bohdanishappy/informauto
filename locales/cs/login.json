@@ -1,8 +1,8 @@
 {
-    "sign_in_to_your_account":"Přihlaste se ke svému účtu",
+    "sign_in_to_your_account":"Přihlásit se ke svému účtu",
     "email_address":"Emailová adresa",
     "password":"Heslo",
     "sign_in":"Přihlásit se",
-    "go_to_home":"Jít domů",
+    "go_to_home":"Zpět",
     "Invalid login credentials":"Neplatné přihlašovací údaje"
 }

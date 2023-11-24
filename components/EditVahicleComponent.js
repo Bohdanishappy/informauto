@@ -342,7 +342,13 @@ const EditVahicleComponent = ({ id }) => {
               toJudge: false,
             },
             {
-              name: 'Remote locking -Trunk electric control',
+              name: 'Remote locking',
+              ok: false,
+              notOk: false,
+              toJudge: false,
+            },
+            {
+              name: 'Trunk electric control',
               ok: false,
               notOk: false,
               toJudge: false,
@@ -1032,8 +1038,8 @@ const EditVahicleComponent = ({ id }) => {
       <BasicInfo vehicle={vehicle} setVehicle={setVehicle} />
       <RecommendationFromMechanic vehicle={vehicle} setVehicle={setVehicle} />
       <PhotoVideoReport vehicle={vehicle} setVehicle={setVehicle} />
-      <h1 className="text-3xl mb-5">
-        <span className="heading_underline">{t('tech_protocol')}</span>
+      <h1 className="text-3xl text-mainBlue font-bold mb-5">
+        <span>{t('tech_protocol')}</span>
       </h1>
       <div className="section_border">
         <RoadTest vehicle={vehicle} setVehicle={setVehicle} />

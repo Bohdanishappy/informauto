@@ -19,10 +19,8 @@ const RecommendationFromMechanic = ({ vehicle, setVehicle }) => {
   };
   return (
     <div className="mb-5">
-      <h1 className="text-3xl mb-5">
-        <span className="heading_underline">
-          {t('recommendation_from_mechanic')}
-        </span>
+      <h1 className="text-3xl font-bold text-mainBlue mb-5">
+        <span>{t('recommendation_from_mechanic')}</span>
       </h1>
       <div className="section_border">
         <TextArea

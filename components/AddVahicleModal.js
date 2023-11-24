@@ -332,7 +332,13 @@ const AddVahicleModal = ({ open, setOpen, setVahicles }) => {
               toJudge: false,
             },
             {
-              name: 'Remote locking -Trunk electric control',
+              name: 'Remote locking',
+              ok: false,
+              notOk: false,
+              toJudge: false,
+            },
+            {
+              name: 'Trunk electric control',
               ok: false,
               notOk: false,
               toJudge: false,

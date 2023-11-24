@@ -1,9 +1,9 @@
 {
-    "ticket_number":"Číslo lístku:",
-    "inspect":"KONTROLOVAT",
-    "report":"ZPRÁVA",
-    "open":"OTEVŘENO",
-    "machanic":"Mechanik",
-    "Record with this Ticket Number":"Záznam s tímto číslem vstupenky",
-    "don't exist.":"neexistují."
+    "ticket_number":"ID protokolu:",
+    "inspect":"INFORM",
+    "report":"AUTO",
+    "open":"OTEVŘÍT",
+    "machanic":"ADMIN - AUTOMECHANIK",
+    "Record with this Ticket Number":"Protokol s tímto číslem",
+    "don't exist.":"neexistuje."
 }

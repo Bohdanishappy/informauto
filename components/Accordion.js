@@ -40,8 +40,8 @@ const Accordion = ({ items, handleOption, handleNotes }) => {
               className="flex items-center justify-between p-2 bg-gray-200 cursor-pointer"
               onClick={() => handleToggle(index)}
             >
-              <h1 className="text-2xl">
-                <span className="heading_underline ">{t(item.name)}</span>{' '}
+              <h1 className="text-2xl text-mainBlue">
+                <span>{t(item.name)}</span>{' '}
                 {/* <span className="text-xl text-green-500">
                   <CheckCircleIcon className="inline w-[30px] h-[30px]" />{' '}
                   <span className="text-black">({totalOk})</span>

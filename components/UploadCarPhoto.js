@@ -251,8 +251,8 @@ const UploadCarPhoto = ({ vehicle, setVehicle }) => {
 
   return (
     <div className="mb-5">
-      <h1 className="text-3xl mb-5">
-        <span className="heading_underline">{t('car_photo')}</span>
+      <h1 className="text-3xl text-mainBlue font-bold mb-5">
+        <span>{t('car_photo')}</span>
       </h1>
       <div className="section_border">
         {vehicle.mainPicture ? (
@@ -319,7 +319,8 @@ const UploadCarPhoto = ({ vehicle, setVehicle }) => {
                 className={`inline cursor-pointer w-[30px] h-[30px] text-green-500`}
               />
               <span className="ml-2">
-                {ok} {t('points_checked')}
+                {ok + 17 + vehicle.photoVideoReport.morePhotos.length + 2}{' '}
+                {t('points_checked')}
               </span>
             </div>
             <div className="flex items-center mt-1">
@@ -351,7 +352,9 @@ const UploadCarPhoto = ({ vehicle, setVehicle }) => {
               onClick={() => (currentUser ? changeRecomendation() : null)}
             >
               <CheckCircleIcon
-                className={`inline cursor-pointer w-[30px] h-[30px] ${
+                className={`inline cursor-pointer ${
+                  !currentUser ? 'w-[50px] h-[50px]' : 'w-[30px] h-[30px]'
+                } ${
                   vehicle.recomendedToBuy ? 'text-green-500' : 'text-slate-300'
                 }`}
               />
@@ -366,7 +369,9 @@ const UploadCarPhoto = ({ vehicle, setVehicle }) => {
               onClick={() => (currentUser ? changeNotRecomendation() : null)}
             >
               <XCircleIcon
-                className={`inline cursor-pointer w-[30px] h-[30px] ${
+                className={`inline cursor-pointer ${
+                  !currentUser ? 'w-[50px] h-[50px]' : 'w-[30px] h-[30px]'
+                } ${
                   vehicle.notRecomendedToBuy ? 'text-red-500' : 'text-slate-300'
                 }`}
               />
@@ -382,7 +387,9 @@ const UploadCarPhoto = ({ vehicle, setVehicle }) => {
               onClick={() => (currentUser ? changeToJudge() : null)}
             >
               <ExclamationTriangleIcon
-                className={`inline cursor-pointer w-[30px] h-[30px]
+                className={`inline cursor-pointer ${
+                  !currentUser ? 'w-[50px] h-[50px]' : 'w-[30px] h-[30px]'
+                }
                 ${vehicle.toJudge ? 'text-yellow-500' : 'text-slate-300'}
                 `}
               />

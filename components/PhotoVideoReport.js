@@ -306,8 +306,8 @@ const PhotoVideoReport = ({ vehicle, setVehicle }) => {
   };
   return (
     <div className="mb-5">
-      <h1 className="text-3xl mb-5">
-        <span className="heading_underline">{t('photo_video_report')}</span>
+      <h1 className="text-3xl text-mainBlue font-bold mb-5">
+        <span>{t('photo_video_report')}</span>
       </h1>
       <div className="section_border">
         <div className="mb-5">
