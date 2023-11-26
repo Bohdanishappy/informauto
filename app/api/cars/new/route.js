@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { connectToDB } from '@/utils/database';
 import Car from '@/models/car';
 
+export const dynamic = 'force-dynamic';
+
 export const POST = async (req) => {
   const {
     name,
