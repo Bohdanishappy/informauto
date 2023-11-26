@@ -313,7 +313,7 @@ const UploadCarPhoto = ({ vehicle, setVehicle }) => {
           </>
         )}
         <div className="sm:flex sm:justify-between sm:gap-3">
-          <div className="mt-5 py-3 px-5 rounded-md bg-slate-100 border">
+          <div className="mt-5 py-3 px-2 sm:px-5 rounded-md bg-slate-100 border">
             <div className="flex items-center">
               <CheckCircleIcon
                 className={`inline cursor-pointer w-[30px] h-[30px] text-green-500`}
@@ -341,7 +341,7 @@ const UploadCarPhoto = ({ vehicle, setVehicle }) => {
             </div>
           </div>
           <div
-            className={`mt-5 py-3 px-5 rounded-md bg-slate-100 border ${
+            className={`mt-5 py-3 px-2 sm:px-5 rounded-md bg-slate-100 border ${
               !currentUser && 'flex items-center'
             }`}
           >
