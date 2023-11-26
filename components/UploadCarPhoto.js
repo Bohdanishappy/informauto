@@ -358,7 +358,7 @@ const UploadCarPhoto = ({ vehicle, setVehicle }) => {
                   vehicle.recomendedToBuy ? 'text-green-500' : 'text-slate-300'
                 }`}
               />
-              <span className={`ml-2 ${!currentUser && 'text-4xl'}`}>
+              <span className={`ml-2 ${!currentUser && 'text-3xl'}`}>
                 {t('recomended_to_buy')}
               </span>
             </div>
@@ -375,7 +375,7 @@ const UploadCarPhoto = ({ vehicle, setVehicle }) => {
                   vehicle.notRecomendedToBuy ? 'text-red-500' : 'text-slate-300'
                 }`}
               />
-              <span className={`ml-2 ${!currentUser && 'text-4xl'}`}>
+              <span className={`ml-2 ${!currentUser && 'text-3xl'}`}>
                 {' '}
                 {t('not_recomended_to_buy')}
               </span>
@@ -393,7 +393,7 @@ const UploadCarPhoto = ({ vehicle, setVehicle }) => {
                 ${vehicle.toJudge ? 'text-yellow-500' : 'text-slate-300'}
                 `}
               />
-              <span className={`ml-2 ${!currentUser && 'text-4xl'}`}>
+              <span className={`ml-2 ${!currentUser && 'text-3xl'}`}>
                 {t('to_judge')}
               </span>
             </div>

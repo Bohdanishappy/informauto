@@ -61,7 +61,7 @@ const PhotoModal = ({
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative transform overflow-hidden bg-black px-4 pb-4 pt-5 text-left shadow-xl transition-all h-screen w-full  sm:px-6">
+              <Dialog.Panel className="relative transform overflow-hidden bg-black px-4 pb-4 pt-5 text-left shadow-xl transition-all h-screen w-full  sm:px-6 flex items-center">
                 <div className="absolute top-0 left-0 pt-4 pr-4 flex justify-end pb-4">
                   <span className="text-white text-2xl ml-5">
                     {selectedPhotoIndex + 1}/{photos.length}
@@ -85,9 +85,9 @@ const PhotoModal = ({
                     className="w-[40px] cursor-pointer h-[40px] text-white"
                   />
                 </div>
-                <div className="h-full flex justify-center">
+                <div className="flex justify-center">
                   <img
-                    className="h-full w-auto"
+                    className="w-full"
                     src={selectedPhoto}
                     alt="selectedPhoto"
                   />
