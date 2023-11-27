@@ -50,7 +50,6 @@ const TextArea = ({ label, name, value, placeholder, onChange, readOnly }) => {
         {label}
       </label>
       <div className="mt-2">
-        {screenWidth}
         <textarea
           id={name}
           name={name}
