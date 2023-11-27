@@ -934,8 +934,6 @@ const EditVahicleComponent = ({ id }) => {
     },
   });
 
-  console.log('vehicle', vehicle);
-
   useEffect(() => {
     const fetchData = async () => {
       setFetchLoading(true);
