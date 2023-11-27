@@ -16,7 +16,7 @@ const TextArea = ({ label, name, value, placeholder, onChange, readOnly }) => {
           value={value}
           onChange={onChange}
           placeholder={placeholder}
-          rows="auto"
+          rows={parseInt(value.length / 100) + 1}
           className={`block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ${
             !readOnly ? 'ring-1' : 'ring-1'
           } ring-inset ring-gray-300 placeholder:text-gray-400 ${
