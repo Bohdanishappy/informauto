@@ -17,11 +17,11 @@ const TextArea = ({ label, name, value, placeholder, onChange, readOnly }) => {
 
   const numberOfRows = () => {
     if (screenWidth > 924) {
-      return parseInt(value.length / 100) + 1;
+      return parseInt(value.length / 70) + 1;
     } else if (screenWidth > 767) {
-      return parseInt(value.length / 75) + 1;
-    } else if (screenWidth > 640) {
       return parseInt(value.length / 60) + 1;
+    } else if (screenWidth > 640) {
+      return parseInt(value.length / 50) + 1;
     } else if (screenWidth > 590) {
       return parseInt(value.length / 55) + 1;
     } else if (screenWidth > 574) {
